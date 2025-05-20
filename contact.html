@@ -5,25 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - QeD Quantum Education</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 <body>
-    <nav>
+    <nav class="main-nav">
         <div class="nav-container">
             <div class="logo">QeD</div>
             <ul class="nav-links">
-                <li><a href="index.html">What is Quantum</a></li>
-                <li><a href="workshop.html">Workshop</a></li>
+                <li><a href="index.html">The Quantum Revolution</a></li>
+                <li><a href="courses.html">Our Courses</a></li>
+                <li><a href="methodology.html">Our Methodology</a></li>
                 <li><a href="team.html">Our Team</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </div>
     </nav>
-
     <main>
-        <section class="section">
+        <!-- Hero-like colored section -->
+        <section class="page-hero-section">
+            <div class="page-hero-content">
+                <h1 class="main-title">Contact</h1>
+            </div>
+        </section>
+        <section class="content-section" data-aos="fade-up">
             <div class="content">
-                <h1>Contact</h1>
-                <div class="feature-box">
+                <div class="feature-box elevated">
                     <p>For more information about the course or to register, please contact us:</p>
                     <div class="contact-info">
                         <p>Email: [Your email address]</p>
@@ -33,9 +39,16 @@
             </div>
         </section>
     </main>
-
     <footer>
-        <p>&copy; 2024 QeD. All rights reserved.</p>
+        <p>&copy; 2025 QeD. All rights reserved.</p>
     </footer>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+    </script>
 </body>
 </html> 

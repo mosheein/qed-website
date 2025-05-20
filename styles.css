@@ -359,4 +359,40 @@ footer {
 .quantum-list li::marker {
     color: var(--accent-color);
     font-size: 1.2em;
+}
+
+.page-hero-section {
+    background: linear-gradient(135deg, #5b82d7 0%, #7fa7e6 100%);
+    color: #fff;
+    padding: 5rem 2rem 3rem 2rem;
+    text-align: center;
+}
+
+.page-hero-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.page-hero-section .main-title {
+    color: #fff;
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 0;
+    letter-spacing: -1.5px;
+    text-shadow: 0 2px 12px rgba(34,51,107,0.08);
+}
+
+.feature-box.elevated {
+    box-shadow: 0 8px 32px rgba(34,51,107,0.10);
+    border: 1px solid #e3eaf7;
+    background: #fff;
+}
+
+@media (max-width: 600px) {
+    .page-hero-section {
+        padding: 3rem 1rem 2rem 1rem;
+    }
+    .page-hero-section .main-title {
+        font-size: 2rem;
+    }
 } 

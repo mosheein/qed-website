@@ -6,6 +6,71 @@
     <title>Our Methodology - QeD Quantum Education</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+        .method-section-title {
+            color: #3e5ba9;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 2.5rem;
+            letter-spacing: -1px;
+            text-align: center;
+        }
+        .method-subsection {
+            background: #f4f7fb;
+            border-left: 6px solid #5b82d7;
+            border-radius: 8px;
+            margin-bottom: 2.5rem;
+            padding: 2rem 2rem 1.5rem 2rem;
+            box-shadow: 0 2px 12px rgba(34,51,107,0.04);
+        }
+        .method-subsection h3 {
+            color: #3e5ba9;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+        .method-subsection h3::before {
+            content: '\1F539'; /* blue diamond icon */
+            font-size: 1.1em;
+            margin-right: 0.7em;
+            color: #3e5ba9;
+        }
+        .method-subsection p {
+            font-size: 1.08rem;
+            color: #1a1a1a;
+            margin-bottom: 0.5rem;
+        }
+        .method-subsection ul {
+            margin: 0.7em 0 0 1.2em;
+            padding: 0;
+            color: #1a1a1a;
+        }
+        .method-subsection ul li {
+            margin-bottom: 0.3em;
+            list-style: disc;
+        }
+        .method-video-title {
+            color: #3e5ba9;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+        .method-video-caption {
+            color: #666;
+            font-size: 1rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .method-video-embed {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+    </style>
 </head>
 <body>
     <nav class="main-nav">
@@ -21,25 +86,46 @@
         </div>
     </nav>
     <main>
+        <!-- Hero-like colored section -->
+        <section class="page-hero-section">
+            <div class="page-hero-content">
+                <h1 class="main-title">Our Methodology</h1>
+            </div>
+        </section>
         <section class="content-section" data-aos="fade-up">
             <div class="content">
-                <h1 class="section-title">Our Methodology</h1>
-                <div class="feature-box" data-aos="fade-up">
-                    <h2>Fun, Personal, and From the Ground Up</h2>
-                    <ul class="quantum-list">
-                        <li><strong>Fun:</strong> We use interactive activities and real-world examples to make complex concepts enjoyable.</li>
-                        <li><strong>Personal:</strong> Small groups, direct interaction with instructors, and tailored feedback ensure every participant feels supported.</li>
-                        <li><strong>From the Ground Up:</strong> We start with the basics and build a strong foundation, so no prior quantum experience is required.</li>
+                <div class="method-section-title">Our Methodology</div>
+                <div class="method-subsection">
+                    <h3>Designed for Everyone — No Quantum Background Required</h3>
+                    <p>We believe anyone can start learning quantum. Our courses are built from the ground up, starting with intuitive concepts and clear explanations — no prior physics or math knowledge needed.</p>
+                </div>
+                <div class="method-subsection">
+                    <h3>In-Person. Personal. Human.</h3>
+                    <p>We focus on creating an engaging, supportive learning environment:</p>
+                    <ul>
+                        <li>Small groups ensure every participant receives personal attention</li>
+                        <li>We use interactive sessions, real-world analogies, and time for reflection</li>
+                        <li>We make sure no one is left behind</li>
                     </ul>
-                    <div style="margin:2rem 0;text-align:center;" data-aos="fade-up">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/t34wEsEs-IM?start=3966" title="YouTube video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                    </div>
+                </div>
+                <div class="method-subsection">
+                    <h3>Led by a Trusted, Experienced Instructor</h3>
+                    <p>Joab Rosenberg has over a decade of experience teaching physics and philosophy in universities across Israel and Europe. He's trained hundreds of tech professionals — many with no prior background — to feel confident navigating the quantum world.</p>
+                </div>
+                <div class="method-subsection">
+                    <h3>More Than Science — Real Market Insight</h3>
+                    <p>With deep roots in the quantum industry, Joab brings more than just academic knowledge. His understanding of the real-world landscape — from startups to global research efforts — helps participants see how quantum technologies are evolving and where the most exciting opportunities lie.</p>
+                </div>
+                <div class="method-video-embed">
+                    <div class="method-video-title">Joab Rosenberg — Bell's Theorem and Entanglement</div>
+                    <div class="method-video-caption">Watch Joab explain Bell's Theorem in one of our live sessions.</div>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/t34wEsEs-IM?start=3966" title="Joab Rosenberg — Bell's Theorem and Entanglement" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </div>
             </div>
         </section>
     </main>
     <footer>
-        <p>&copy; 2024 QeD. All rights reserved.</p>
+        <p>&copy; 2025 QeD. All rights reserved.</p>
     </footer>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>

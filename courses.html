@@ -6,6 +6,99 @@
     <title>Our Courses - QeD Quantum Education</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+        .course-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+            margin-top: 2rem;
+        }
+        .course-card {
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 8px 32px rgba(34,51,107,0.10);
+            border: 1px solid #e3eaf7;
+            transition: box-shadow 0.3s cubic-bezier(.4,0,.2,1);
+            cursor: pointer;
+            overflow: hidden;
+            position: relative;
+        }
+        .course-card:not(.expanded):hover {
+            box-shadow: 0 12px 36px rgba(34,51,107,0.13);
+        }
+        .course-card-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 2rem 2rem 1.2rem 2rem;
+        }
+        .course-card-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: #22336b;
+        }
+        .course-card-meta {
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem;
+            font-size: 1.05rem;
+            color: #3e5ba9;
+            margin-top: 0.3rem;
+        }
+        .course-card-toggle {
+            font-size: 1.7rem;
+            color: #3e5ba9;
+            margin-left: 1.5rem;
+            transition: transform 0.3s cubic-bezier(.4,0,.2,1);
+            user-select: none;
+        }
+        .course-card.expanded .course-card-toggle {
+            transform: rotate(180deg);
+        }
+        .course-card-content {
+            max-height: 0;
+            overflow: hidden;
+            background: #f7f9fb;
+            transition: max-height 0.5s cubic-bezier(.4,0,.2,1), padding 0.3s;
+            padding: 0 2rem;
+        }
+        .course-card.expanded .course-card-content {
+            padding: 0 2rem 2rem 2rem;
+            max-height: 800px;
+        }
+        .course-card-section-title {
+            color: #3e5ba9;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            margin-bottom: 0.7rem;
+            font-size: 1.1rem;
+        }
+        .course-card-content ul {
+            margin-left: 1.2em;
+            margin-bottom: 1.2em;
+        }
+        .course-card-content li {
+            margin-bottom: 0.3em;
+        }
+        @media (max-width: 700px) {
+            .course-card-header, .course-card-content {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+        }
+        @media (max-width: 500px) {
+            .course-card-title {
+                font-size: 1.05rem;
+            }
+            .course-card-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.7rem;
+                padding-top: 1.2rem;
+                padding-bottom: 1.2rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <nav class="main-nav">
@@ -21,34 +114,61 @@
         </div>
     </nav>
     <main>
+        <!-- Hero-like colored section -->
+        <section class="page-hero-section">
+            <div class="page-hero-content">
+                <h1 class="main-title">Our Courses</h1>
+            </div>
+        </section>
         <section class="content-section" data-aos="fade-up">
             <div class="content">
-                <h1 class="section-title">Our Courses</h1>
-                <div class="feature-box">
-                    <h2>Amsterdam Quantum Technologies Course</h2>
-                    <ul>
-                        <li><strong>Duration:</strong> 3 days</li>
-                        <li><strong>Dates:</strong> September 19-21, 2024</li>
-                        <li><strong>Location:</strong> Amsterdam</li>
-                        <li><strong>Cost:</strong> 1200 euros plus VAT per student</li>
-                        <li><strong>Capacity:</strong> Up to 35 students</li>
-                    </ul>
-                </div>
-                <div class="feature-box">
-                    <h2>Mitzpe Ramon Quantum Retreat</h2>
-                    <ul>
-                        <li><strong>Duration:</strong> 4 days</li>
-                        <li><strong>Dates:</strong> June 2024</li>
-                        <li><strong>Location:</strong> Mitzpe Ramon, Israel</li>
-                        <li><strong>Format:</strong> Immersive retreat, hands-on workshops, and networking</li>
-                        <li><strong>Capacity:</strong> Up to 25 participants</li>
-                    </ul>
+                <div class="course-cards">
+                    <!-- Amsterdam Course Card -->
+                    <div class="course-card" onclick="toggleCourseCard(this)">
+                        <div class="course-card-header">
+                            <div>
+                                <div class="course-card-title">Amsterdam Quantum Technologies Course</div>
+                                <div class="course-card-meta">Location: Amsterdam<br>Dates: September 19-21, 2024</div>
+                            </div>
+                            <span class="course-card-toggle">&#9660;</span>
+                        </div>
+                        <div class="course-card-content">
+                            <div class="course-card-section-title">Audience</div>
+                            <p>Candidates: Experienced tech employees who want to learn about the Quantum Market. The market is growing, and quantum computers and sensors will play a major role in the future of computational solutions — disrupting industries like finance, material science, drug discovery, logistics, and mobility.</p>
+                            <div class="course-card-section-title">Course Breakdown</div>
+                            <ul>
+                                <li><strong>Day 1:</strong> Reminder on linear algebra in two dimensions, complex numbers. Basics of the Stern-Gerlach experiment. Quantum Mechanics axioms.</li>
+                                <li><strong>Day 2:</strong> Superposition, Measurement, Entanglement, Bell Theorem, Bloch sphere. Market overview: Investments, companies, technologies, policies.</li>
+                                <li><strong>Day 3:</strong> Core Technologies — Superconductors, Trapped Ions, Photons, Neutral Atoms, Quantum Annealing, Quantum Sensing. Basic Quantum gates. Decoherence. Quantum software, algorithms, error correction.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Mitzpe Ramon Course Card -->
+                    <div class="course-card" onclick="toggleCourseCard(this)">
+                        <div class="course-card-header">
+                            <div>
+                                <div class="course-card-title">Mitzpe Ramon Quantum Retreat</div>
+                                <div class="course-card-meta">Location: Mitzpe Ramon, Israel<br>Dates: June 2024</div>
+                            </div>
+                            <span class="course-card-toggle">&#9660;</span>
+                        </div>
+                        <div class="course-card-content">
+                            <div class="course-card-section-title">Audience</div>
+                            <p>Candidates: Experienced tech employees who want to learn about the Quantum Market. The market is growing, and quantum computers and sensors will play a major role in the future of computational solutions — disrupting industries like finance, material science, drug discovery, logistics, and mobility.</p>
+                            <div class="course-card-section-title">Course Breakdown</div>
+                            <ul>
+                                <li><strong>Day 1:</strong> Reminder on linear algebra in two dimensions, complex numbers. Basics of the Stern-Gerlach experiment. Quantum Mechanics axioms.</li>
+                                <li><strong>Day 2:</strong> Superposition, Measurement, Entanglement, Bell Theorem, Bloch sphere. Market overview: Investments, companies, technologies, policies.</li>
+                                <li><strong>Day 3:</strong> Core Technologies — Superconductors, Trapped Ions, Photons, Neutral Atoms, Quantum Annealing, Quantum Sensing. Basic Quantum gates. Decoherence. Quantum software, algorithms, error correction.</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
     <footer>
-        <p>&copy; 2024 QeD. All rights reserved.</p>
+        <p>&copy; 2025 QeD. All rights reserved.</p>
     </footer>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
@@ -57,6 +177,14 @@
             once: true,
             offset: 100
         });
+        // Expandable course cards logic
+        function toggleCourseCard(card) {
+            const allCards = document.querySelectorAll('.course-card');
+            allCards.forEach(c => {
+                if (c !== card) c.classList.remove('expanded');
+            });
+            card.classList.toggle('expanded');
+        }
     </script>
 </body>
 </html> 
