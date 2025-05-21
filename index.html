@@ -3,14 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QeD - Join the second Quantum Revolution</title>
+    <title>The Quantum Revolution - QeD</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+        .main-section-title {
+            font-size: 2.7rem;
+            font-weight: 800;
+            color: #22336b;
+            margin-top: 4rem;
+            margin-bottom: 3.5rem;
+            text-align: center;
+            letter-spacing: -1.5px;
+        }
+        .main-section {
+            max-width: 900px;
+            margin: 0 auto 3.5rem auto;
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 8px 32px rgba(34,51,107,0.07);
+            padding: 2.5rem 2.5rem 2.2rem 2.5rem;
+        }
+        .main-section:not(:last-child) {
+            margin-bottom: 2.5rem;
+        }
+        .main-section-heading {
+            color: #3e5ba9;
+            font-size: 1.45rem;
+            font-weight: 700;
+            margin-bottom: 1.2rem;
+        }
+        .main-section-text {
+            font-size: 1.13rem;
+            color: #1a1a1a;
+            line-height: 1.8;
+            margin-bottom: 0.2rem;
+        }
+        @media (max-width: 700px) {
+            .main-section-title {
+                font-size: 1.5rem;
+                margin-top: 2rem;
+                margin-bottom: 2rem;
+            }
+            .main-section {
+                padding: 1.2rem 0.7rem 1.2rem 0.7rem;
+            }
+            .main-section-heading {
+                font-size: 1.1rem;
+            }
+            .main-section-text {
+                font-size: 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <nav class="main-nav">
         <div class="nav-container">
             <div class="logo">QeD</div>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
             <ul class="nav-links">
                 <li><a href="index.html">The Quantum Revolution</a></li>
                 <li><a href="courses.html">Our Courses</a></li>
@@ -21,64 +76,51 @@
         </div>
     </nav>
     <main>
-        <!-- HERO SECTION -->
-        <section class="hero-section">
-            <div class="hero-content" data-aos="fade-up">
-                <h1 class="main-title">Join the second Quantum Revolution</h1>
-                <p class="hero-slogan">We offer courses for people with no background in Quantum or physics. Whether you consider a career change or are just curious about this field.</p>
-                <a href="#opportunity" class="cta-button">Explore Our Courses</a>
+        <div class="main-section-title" data-aos="fade-up">The Quantum Revolution</div>
+        <section class="main-section" data-aos="fade-up">
+            <div class="main-section-heading">The Second Quantum Revolution</div>
+            <div class="main-section-text">
+                Quantum technologies are poised to reshape our technological landscape — much like the invention of the transistor did in the 1950s. At the core of this transformation lie quantum gates and the phenomenon of entanglement, which defy classical physics and open the door to a new era of computation.<br><br>
+                This revolution brings unprecedented power to tackle challenges that were once thought insurmountable — from breaking RSA encryption and optimizing complex financial systems to accelerating drug discovery and solving environmental and climate problems.<br><br>
+                And this is just the beginning.
             </div>
         </section>
-
-        <!-- WHY QUANTUM, WHY NOW? -->
-        <section class="content-section" data-aos="fade-up">
-            <div class="content">
-                <h2 class="section-title">The Second Quantum Revolution</h2>
-                <p class="section-text">
-                    Quantum technologies are transforming the world — just like the transistor did in the 1950s. With quantum entanglement and superposition at their core, these systems are solving problems once thought impossible:
-                </p>
-                <ul class="quantum-list">
-                    <li>Breaking encryption</li>
-                    <li>Optimizing finance</li>
-                    <li>Accelerating drug discovery</li>
-                    <li>Tackling climate modeling</li>
-                </ul>
-                <p class="section-text">And this is only the beginning.</p>
+        <section class="main-section" data-aos="fade-up">
+            <div class="main-section-heading">An Ecosystem of Innovation</div>
+            <div class="main-section-text">
+                The quantum technology market is experiencing explosive growth. Leading companies like Google, Microsoft, Amazon, and IBM are investing heavily in research and development. Venture capital is fueling progress at every layer — from core infrastructure and hardware to quantum software and algorithms.<br><br>
+                With projections estimating a total addressable market of $180 billion by 2040, quantum is no longer just science fiction. It's a thriving, rapidly evolving ecosystem rich with opportunity.
             </div>
         </section>
-
-        <!-- A BOOMING ECOSYSTEM -->
-        <section class="content-section" data-aos="fade-up">
-            <div class="content">
-                <h2 class="section-title">An Industry Backed by Giants</h2>
-                <p class="section-text">
-                    The quantum tech market is projected to hit $180B by 2040. Companies like Google, Microsoft, Amazon, and IBM are already investing billions. From infrastructure to algorithms, startups and research teams are shaping a thriving innovation ecosystem.
-                </p>
-                <p class="section-text">Now is the time to get involved.</p>
-            </div>
-        </section>
-
-        <!-- THE GAP — TALENT -->
-        <section id="opportunity" class="content-section" data-aos="fade-up">
-            <div class="content">
-                <h2 class="section-title">The Missing Piece Is You</h2>
-                <p class="section-text">
-                    What's holding the field back? Talent. There's a growing need for professionals who understand tech and business — people who can bridge the gap between research and real-world impact. If you're a curious tech leader, you already have what it takes.
-                </p>
+        <section class="main-section" data-aos="fade-up">
+            <div class="main-section-heading">The Missing Piece Is Talent</div>
+            <div class="main-section-text">
+                But to bring this revolution to life, we need people. The biggest challenge today isn't technology — it's talent.<br><br>
+                The next generation of quantum advancement depends on individuals who can bridge scientific complexity and business impact. Experienced professionals and entrepreneurial leaders who can work alongside researchers and translate innovation into real-world applications.<br><br>
+                If you're curious, driven, and ready to explore, this is your moment to step into the quantum world.
             </div>
         </section>
     </main>
-
     <footer>
         <p>&copy; 2025 QeD. All rights reserved.</p>
     </footer>
-
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
         AOS.init({
             duration: 1000,
             once: true,
             offset: 100
+        });
+        // Hamburger menu toggle
+        function toggleMenu() {
+            var navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('open');
+        }
+        // Close menu on link click (mobile)
+        document.querySelectorAll('.nav-links a').forEach(function(link) {
+            link.addEventListener('click', function() {
+                document.querySelector('.nav-links').classList.remove('open');
+            });
         });
     </script>
 </body>
