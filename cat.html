@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Play Schrödinger's Cat - QeD</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+        .cat-game-container {
+            max-width: 420px;
+            margin: 4rem auto 0 auto;
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 8px 32px rgba(34,51,107,0.10);
+            padding: 2.5rem 2rem 2.2rem 2rem;
+            text-align: center;
+        }
+        .cat-box-img {
+            width: 120px;
+            margin: 1.5rem auto 1.2rem auto;
+            display: block;
+        }
+        .cat-img {
+            width: 120px;
+            margin: 1.5rem auto 1.2rem auto;
+            display: block;
+        }
+        .cat-game-btn {
+            background: #3e5ba9;
+            color: #fff;
+            border: none;
+            border-radius: 30px;
+            padding: 0.8rem 2.2rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-top: 1.2rem;
+            cursor: pointer;
+            transition: background 0.2s;
+            box-shadow: 0 2px 12px rgba(34,51,107,0.08);
+        }
+        .cat-game-btn:hover {
+            background: #22336b;
+        }
+        .cat-explanation {
+            margin-top: 1.5rem;
+            font-size: 1.08rem;
+            color: #22336b;
+        }
+    </style>
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="logo">QeD</div>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">The Quantum Revolution</a></li>
+                <li><a href="courses.html">Our Courses</a></li>
+                <li><a href="methodology.html">Our Methodology</a></li>
+                <li><a href="cat.html">Play Schrödinger's cat</a></li>
+                <li><a href="team.html">Our Team</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    <main>
+        <div class="cat-game-container" data-aos="fade-up">
+            <h1 style="color:#3e5ba9; font-size:1.5rem; font-weight:700;">Schrödinger's Cat Game</h1>
+            <div id="cat-game-content">
+                <img src="https://cdn.jsdelivr.net/gh/curvenote/qed-assets@main/box-closed.png" alt="Closed box" class="cat-box-img">
+                <div style="margin-bottom:1.2rem;">There is a mysterious box. Inside is a cat in quantum superposition — neither alive nor dead... until you look!</div>
+                <button class="cat-game-btn" onclick="openBox()">Open the box</button>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 QeD. All rights reserved.</p>
+    </footer>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+        // Hamburger menu toggle
+        function toggleMenu() {
+            var navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('open');
+        }
+        document.querySelectorAll('.nav-links a').forEach(function(link) {
+            link.addEventListener('click', function() {
+                document.querySelector('.nav-links').classList.remove('open');
+            });
+        });
+        // Schrödinger's cat game logic
+        function openBox() {
+            var aliveCat = {
+                img: 'https://cdn.jsdelivr.net/gh/curvenote/qed-assets@main/cat-alive.png',
+                alt: 'Alive cat',
+                text: "You found the cat alive! Until you opened the box, the cat was in a superposition — both alive and dead. This is the weirdness of quantum mechanics: before measurement, all possibilities exist at once!"
+            };
+            var deadCat = {
+                img: 'https://cdn.jsdelivr.net/gh/curvenote/qed-assets@main/cat-dead.png',
+                alt: 'Dead cat',
+                text: "You found the cat dead! Until you opened the box, the cat was in a superposition — both alive and dead. This is the weirdness of quantum mechanics: before measurement, all possibilities exist at once!"
+            };
+            var outcome = Math.random() < 0.5 ? aliveCat : deadCat;
+            document.getElementById('cat-game-content').innerHTML =
+                `<img src="${outcome.img}" alt="${outcome.alt}" class="cat-img">` +
+                `<div class="cat-explanation">${outcome.text}</div>` +
+                `<button class="cat-game-btn" onclick="resetBox()">Try again</button>`;
+        }
+        function resetBox() {
+            document.getElementById('cat-game-content').innerHTML =
+                `<img src='https://cdn.jsdelivr.net/gh/curvenote/qed-assets@main/box-closed.png' alt='Closed box' class='cat-box-img'>` +
+                `<div style='margin-bottom:1.2rem;'>There is a mysterious box. Inside is a cat in quantum superposition — neither alive nor dead... until you look!</div>` +
+                `<button class='cat-game-btn' onclick='openBox()'>Open the box</button>`;
+        }
+    </script>
+</body>
+</html> 
