@@ -104,6 +104,11 @@
     <nav class="main-nav">
         <div class="nav-container">
             <div class="logo">QeD</div>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
             <ul class="nav-links">
                 <li><a href="index.html">The Quantum Revolution</a></li>
                 <li><a href="courses.html">Our Courses</a></li>
@@ -176,6 +181,17 @@
             duration: 1000,
             once: true,
             offset: 100
+        });
+        // Hamburger menu toggle
+        function toggleMenu() {
+            var navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('open');
+        }
+        // Close menu on link click (mobile)
+        document.querySelectorAll('.nav-links a').forEach(function(link) {
+            link.addEventListener('click', function() {
+                document.querySelector('.nav-links').classList.remove('open');
+            });
         });
         // Expandable course cards logic
         function toggleCourseCard(card) {
